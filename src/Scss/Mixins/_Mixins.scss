@@ -1,7 +1,6 @@
 @use '../Variables/colors' as *;
 @use "sass:map";
-//@Mixin For responsive
-
+//@Mixin For Media_Query
 $breakpoints: (
   'small':  320px,
   'medium': 481px  ,
@@ -15,7 +14,6 @@ $breakpoints: (
         @content;
       }
   }
-
 //@Mixin For Border
 @mixin border($radius){
 border : {
@@ -23,9 +21,8 @@ border : {
   width:1px;
   style:solid;
   radius:$radius;
+ }
 }
-}
-
 //@Mixin for Specific Border
 @mixin SpecificBorder($position,$color,$_Radius){
   border-#{$position} : {
@@ -34,26 +31,17 @@ border : {
     style:solid;
     radius:$_Radius;
   }
-  }
- 
+}
 //@Mixin For Position  
 @mixin position($position,$block,$inline,$top){
   position: $position;
   #{$block}: $top;
   #{$inline}: 0;
 }
+//@Mixin For Grid
+@mixin grid($columns){
+  display: grid;
+  grid-template-columns: $columns;
+}
 
-
-@mixin test {
-display: flex;
-justify-content: center;
  
-background-color: whitesmoke;
-}
-@mixin resp($nali){
-@if($nali == 'yes'){
-    color: purple;
-}@else{
-    color: pink;
-}
-}

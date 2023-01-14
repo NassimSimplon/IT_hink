@@ -1,0 +1,22 @@
+@use '../PlaceHolders/placeHolders' as *;
+@use '../Mixins/Mixins' as *;
+@use '../Variables/globalUses' as *;
+ 
+
+.Space_Section{
+    @extend %Third_size;
+    padding: 1rem ;
+    background-color:$low_white;
+    @include respond-to('responsive-nav','extra-large'){
+        @include grid($columns_01);
+    };
+    @include respond-to('small','responsive-nav'){
+        @include grid($columns_03);
+    };
+    .ItGroupes_List{
+        @include respond-to('small','responsive-nav'){
+            display: none;
+        };
+    }
+
+}

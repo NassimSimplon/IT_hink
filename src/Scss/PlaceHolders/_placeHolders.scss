@@ -37,4 +37,10 @@ color: red;
     flex-direction: column; 
 
 }
+%flex_No_Justify{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
  

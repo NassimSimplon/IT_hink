@@ -1,0 +1,8 @@
+@use '../PlaceHolders/placeHolders' as *;
+@use '../Mixins/Mixins' as *;
+@use '../Variables/globalUses' as *;
+
+.Post_section{
+    @extend %Third_size;
+    @include grid($columns_02);
+}

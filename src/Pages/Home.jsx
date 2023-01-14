@@ -1,12 +1,21 @@
-import {Suspense} from 'react'
+import UseSuspense from '../Hooks/useSuspense'
 import Description from '../Components/Description'
+import FilterBar from '../Components/FilterBar'
+import Space_Section from '../Components/Space_Section'
 
 const Home = () => {
   return (
     <div id='Home' key="Home_parent">
-  <Suspense fallback={<div>Loading ....</div>}>
+  <UseSuspense >
 <Description/>
-</Suspense>
+</UseSuspense>
+<UseSuspense >
+<FilterBar />
+</UseSuspense>
+<UseSuspense >
+<Space_Section />
+</UseSuspense>
+
 </div>
   )
 }

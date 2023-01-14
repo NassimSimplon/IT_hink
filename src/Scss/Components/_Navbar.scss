@@ -9,9 +9,8 @@
 
 .Navbar{
     @extend %Primary_size;
-    @extend %flex_Row;
-     
     height: $height  ;
+    @extend %flex_Row;
     padding: .7rem 1.5rem;
     z-index: $high-Z;
     color:  map.get($primary_Colors,"primary-color-03");

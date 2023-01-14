@@ -1,0 +1,25 @@
+
+ @use '../PlaceHolders/placeHolders' as *;
+ @use '../Variables/colors' as *;
+ @use '../Mixins/Mixins' as *;
+ @use '../Variables/font' as *;
+ @use '../Variables/globalUses' as *;
+ @use "sass:map";
+
+ .FilterBar{
+    @extend %Primary_size;
+    height: $height  ;
+    @extend %flex_Row;
+    padding: .7rem 2.5rem;
+    z-index: $high-Z;
+    color:  map.get($secondary_Colors,"secondary-color-02");
+    @include position(sticky,top,left,0);
+    box-shadow: 0px 0px 5px 3px $shadow;
+    &:hover{
+        color:  map.get($primary_Colors,"primary-color-03");
+    }
+    div{
+        @extend %flex_Row;
+        gap: 15px;
+    }
+ }

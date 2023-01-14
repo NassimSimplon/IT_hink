@@ -1,0 +1,78 @@
+@use '../PlaceHolders/placeHolders' as *;
+@use '../Variables/colors' as *;
+@use '../Mixins/Mixins' as *;
+@use '../Variables/font' as *;
+@use '../Variables/border' as *;
+@use '../Variables/globalUses' as *;
+@use "sass:map";
+.ItGroupes_List{
+    @extend %Third_size;
+    padding: 1rem 0.4rem;
+    margin: auto;
+ 
+    > div{
+     @extend %Forth_size;
+     background-color:  map.get($primary_Colors,"primary-color-02");
+     box-shadow: 0px 0px 5px 3px $shadow;
+     padding: 1rem;
+     border-radius: $Radius_Border;
+     position: relative;
+     .head{
+        @extend %Primary_size;
+        @extend %flex_Row;
+        padding-bottom: 1rem;  
+     }
+     .place{
+        @extend %Primary_size;
+        @extend %flex_No_Justify;
+        padding-inline: .2rem;
+        padding-bottom: .4rem;
+        gap: 15px;
+        margin-top: 5px;
+        img{
+            width: 65px;
+            aspect-ratio:1 / 1;
+            border-radius: 50%;
+        }
+        > div{
+            @extend %Primary_size;
+          h4{
+            padding-block: 3px;
+            font : {
+                size:1.1vw;
+                weight:$Big_Weight;
+            }
+          } 
+          span{
+            color: map.get($secondary_Colors,"secondary-color-02");
+            font : {
+                size:#{$Small_Size - 2};
+                weight:$Small_Weight;
+            }
+          }   
+          .in{
+            background-color:  map.get($primary_Colors,"primary-color-01");
+            color:  map.get($primary_Colors,"primary-color-02");
+            @include border($Rounded_Border);
+            margin-top: 5px;
+            box-shadow: 0px 0px 5px 3px $shadow;
+         
+        }
+       }
+     }
+    }
+    h6{
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      bottom: -7.5rem;
+      left: 50%;
+      transform: translate(-50% , -50%);
+      padding-bottom: 2rem;
+      cursor: pointer;
+      span{
+        color:  map.get($primary_Colors,"primary-color-01");
+        font-weight: $Big_Weight;
+      }
+    }
+}

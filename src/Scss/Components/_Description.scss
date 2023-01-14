@@ -75,15 +75,13 @@
         @extend %flex_Row;
         gap: 10px;
         padding: 10px;
-        svg{
+        img{
           background-color:  map.get($primary_Colors,"primary-color-01");
           padding: 5px;
           border-radius:$Radius_Border;
-          transition: all .2s ease-in-out;
+          transition: all .1s ease-in-out;
           &:hover{
-            background-color:  map.get($primary_Colors,"primary-color-02") ;
-            fill: map.get($primary_Colors,"primary-color-01") !important;
-            transform: scale(1.1);
+           transform: scale(1.1);
           }
         }
       }
@@ -100,9 +98,6 @@
           size: $Small_Size;
           weight:$Big_Weight ;
         }
-        svg{
-          fill:  map.get($primary_Colors,"primary-color-02") !important;
-        }
         @include respond-to('small','large'){
           margin: 20px auto;
         }
@@ -114,11 +109,9 @@
     @include respond-to('small','large'){
       padding: 5vh 5vw;
   }
- 
    @include respond-to('large','extra-large'){
     padding: 6rem 5vw  !important;
    }
   }
-
  }
  
