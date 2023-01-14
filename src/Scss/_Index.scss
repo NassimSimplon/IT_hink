@@ -1,0 +1,42 @@
+@use './Variables/colors' as *;
+@use './Mixins/Mixins' as *;
+@use './PlaceHolders/placeHolders' as *;
+@use "sass:map";
+@use './Components/Navbar';
+@use './Components/Description';
+
+/*
+
+.clr{
+    @extend %cla;
+ 
+    background-color: map.get($primary_Colors, "primary-black");
+    border: solid 11px $nass; 
+    margin: auto {
+        left:5rem;
+        top:5rem;
+    }
+  
+    
+}
+.test{
+    @include test;
+}
+.hola{
+
+      
+
+  @include respond-to('small') {
+   // @include resp('yes');
+   color: green;
+  }
+
+  @include respond-to('medium') {
+    color: red;
+   }
+  @include respond-to('large') {
+    color: blue;
+  }
+}
+
+*/

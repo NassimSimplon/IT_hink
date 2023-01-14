@@ -1,0 +1,59 @@
+@use '../Variables/colors' as *;
+@use "sass:map";
+//@Mixin For responsive
+
+$breakpoints: (
+  'small':  320px,
+  'medium': 481px  ,
+  'large': 769px,
+  'extra-large':3000px,
+  'responsive-nav':  1024px 
+) !default;
+
+@mixin respond-to( $min , $max ) {
+      @media screen and (min-width:#{inspect(map-get($breakpoints, $min))} ) and (max-width:#{inspect(map-get($breakpoints, $max))} ) {
+        @content;
+      }
+  }
+
+//@Mixin For Border
+@mixin border($radius){
+border : {
+  color:  map.get($primary_Colors,"primary-color-01");
+  width:1px;
+  style:solid;
+  radius:$radius;
+}
+}
+
+//@Mixin for Specific Border
+@mixin SpecificBorder($position,$color,$_Radius){
+  border-#{$position} : {
+    color:  $color;
+    width:1px;
+    style:solid;
+    radius:$_Radius;
+  }
+  }
+ 
+//@Mixin For Position  
+@mixin position($position,$block,$inline,$top){
+  position: $position;
+  #{$block}: $top;
+  #{$inline}: 0;
+}
+
+
+@mixin test {
+display: flex;
+justify-content: center;
+ 
+background-color: whitesmoke;
+}
+@mixin resp($nali){
+@if($nali == 'yes'){
+    color: purple;
+}@else{
+    color: pink;
+}
+}

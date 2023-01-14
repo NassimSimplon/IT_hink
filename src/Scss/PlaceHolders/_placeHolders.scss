@@ -1,0 +1,40 @@
+//Placeholder
+%cla{
+   
+    font: {
+    size: 1rem;
+    weight:900;
+}
+color: red;
+} 
+
+//Size PlaceHolder
+%Primary_size{
+    width: 100%;
+    height: fit-content;
+}
+%Secondary_size{
+    width:fit-content;
+    height: 100%;
+}
+%Third_size{
+    width: 100%;
+    height: 100%;
+}
+%Forth_size{
+    width: fit-content;
+    height: fit-content;
+}
+//FlexBox PlaceHolder
+%flex_Row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+%flex_Column{
+    display: flex;
+    flex-direction: column; 
+
+}
+ 

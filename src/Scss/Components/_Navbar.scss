@@ -1,0 +1,99 @@
+//@PlaceHolders
+@use '../PlaceHolders/placeHolders' as *;
+@use '../Variables/colors' as *;
+@use '../Mixins/Mixins' as *;
+@use '../Variables/font' as *;
+@use '../Variables/border' as *;
+@use '../Variables/globalUses' as *;
+@use "sass:map";
+
+.Navbar{
+    @extend %Primary_size;
+    @extend %flex_Row;
+     
+    height: $height  ;
+    padding: .7rem 1.5rem;
+    z-index: $high-Z;
+    color:  map.get($primary_Colors,"primary-color-03");
+    @include  SpecificBorder(bottom,map.get($secondary_Colors,"secondary-color-01"),0);
+    
+   .list_section {
+    @extend %Third_size;
+    @include position(fixed,top,left,$height);
+    background-color: map.get($primary_Colors,"primary-color-02");
+    z-index: $high-Z;
+    ul{
+        @extend %Third_size;
+        @extend %flex_Column; 
+        gap: 2rem;
+         padding: 2rem 0;
+        li{
+           @extend %Primary_size;
+           padding-block: 10px;
+            font : {
+                size:$Medium_Size;
+                weight:$Small_Weight;
+            }
+                
+            &:hover{
+                background-color: map.get($primary_Colors,"primary-color-01");
+                color: map.get($primary_Colors,"primary-color-02");
+            }
+            text-align: center;
+        }
+    }
+   }
+    > img{
+        border-radius: $Radius_Border;
+        padding: 3px;
+        display: none;
+        @include respond-to('small','responsive-nav'){
+            display: block;
+        }
+    }
+    .logo{
+        @extend %Forth_size;
+        @extend %flex_Row;
+        gap: 10px !important ;
+        h1{
+            background-color:map.get($primary_Colors,"primary-color-01");
+            color:map.get($primary_Colors,"primary-color-02");
+            padding: 6px 10px ;
+            @include border($Radius_Border);
+            font: {
+               size:$Big_Size;
+                weight:$Big_Weight;
+            }
+        }
+        > span{
+            font: {
+                size:$Big_Size;
+                weight:$Big_Weight;
+            }  
+            color:map.get($primary_Colors,"primary-color-01");
+        }
+    }
+    .btn_section{
+        @extend %Forth_size;
+        @extend %flex_Row;
+        gap: 15px;
+        button{
+            background-color:map.get($primary_Colors,"primary-color-01") ;
+            color: map.get($primary_Colors,"primary-color-02");
+            @include border($Radius_Border);
+        }
+        h1{ 
+            font: {
+                size:$Small_Size;
+                weight:$Big_Weight;
+            }
+            color:map.get($primary_Colors,"primary-color-01");
+            text-shadow: 0px 3px 6px $shadow;
+        }
+
+        @include respond-to('small','responsive-nav'){
+            display: none;
+        }
+    }
+
+}

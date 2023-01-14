@@ -1,0 +1,47 @@
+
+//Global Rules
+@use './Scss/Index';
+ 
+*{
+    box-sizing: border-box;
+    outline: none;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: normal;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 16px ;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  cursor: pointer;
+}
+svg, img{
+    fill: white !important;
+}
+ 

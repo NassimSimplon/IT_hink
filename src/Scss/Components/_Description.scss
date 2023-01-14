@@ -1,0 +1,124 @@
+
+ @use '../PlaceHolders/placeHolders' as *;
+ @use '../Variables/colors' as *;
+ @use '../Mixins/Mixins' as *;
+ @use '../Variables/font' as *;
+ @use '../Variables/border' as *;
+ @use '../Variables/globalUses' as *;
+ @use "sass:map";
+ #Description{
+    @extend %Third_size;
+      background-color: map.get($primary_Colors,"primary-color-01");
+      marquee{ 
+        height: 2.1rem;
+        p {
+        @extend %Primary_size;
+        margin-top: 9px !important;
+        color:  map.get($primary_Colors,"primary-color-02"); 
+        font: {
+            size:$Small_Size;
+            weight:$Big_Weight;
+        } 
+      }
+    }
+   > div{
+    @extend %Third_size;
+    background-image: url(https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1100);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;   
+    position: relative;
+    background-position: bottom;
+    z-index: $medium-Z;
+    &::before{
+      content: "";
+      @extend %Third_size;
+      @include position(absolute,top,left,0);
+      background-color: rgba(0, 0, 0, 0.673);
+      z-index: $low-Z;
+    }
+    div{
+      @extend %Third_size;
+      h1{
+        color:  map.get($primary_Colors,"primary-color-02"); 
+        font: {
+ 
+          weight:$Big_Weight;
+         };
+         span{
+          color: map.get($primary_Colors,"primary-color-01"); 
+         }
+        @include respond-to('small','medium'){
+          text-align: center;
+         font: {
+          size:10vw;
+
+         };
+      }
+      @include respond-to('medium','large'){
+        text-align: center;
+       font: {
+        size:6.5vw;
+
+       };  
+    }
+    @include respond-to('large','extra-large'){
+       text-align: left;
+      font: {
+       size:4.5vw;
+
+      };
+   }
+      }
+      > div {
+        @extend %Secondary_size;
+        @extend %flex_Row;
+        gap: 10px;
+        padding: 10px;
+        svg{
+          background-color:  map.get($primary_Colors,"primary-color-01");
+          padding: 5px;
+          border-radius:$Radius_Border;
+          transition: all .2s ease-in-out;
+          &:hover{
+            background-color:  map.get($primary_Colors,"primary-color-02") ;
+            fill: map.get($primary_Colors,"primary-color-01") !important;
+            transform: scale(1.1);
+          }
+        }
+      }
+      h2{
+        @extend %Secondary_size;
+        @extend %flex_Row;
+        background-color:map.get($primary_Colors,"primary-color-01") ;
+        color: map.get($primary_Colors,"primary-color-02");
+        @include border($Radius_Border);
+        padding: 8px 16px ;
+        margin: 20px 12px;
+        gap: 10px;
+        font : {
+          size: $Small_Size;
+          weight:$Big_Weight ;
+        }
+        svg{
+          fill:  map.get($primary_Colors,"primary-color-02") !important;
+        }
+        @include respond-to('small','large'){
+          margin: 20px auto;
+        }
+      }
+      @include respond-to('small','large'){
+        margin: 10px auto;
+      }
+    }
+    @include respond-to('small','large'){
+      padding: 5vh 5vw;
+  }
+ 
+   @include respond-to('large','extra-large'){
+    padding: 6rem 5vw  !important;
+   }
+  }
+
+ }
+ 
